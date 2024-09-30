@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de progreso Jive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .skill-bar {
+            width: 100%;
+            max-width: 300px;
+            height: 20px;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            margin: 10px auto;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: blue;
+            border-radius: 10px;
+        }
+
+        .label {
+            margin-left: 10px;
+        }
+
+        .skill-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .skill-container div {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>JIVE - Aprende y diviértete</h1>
+
+    <h3>Nombres del jugador</h3>
+
+    <h3>Progreso</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Título de juego</th>
+                <th>Tipo de juego</th>
+                <th>Progreso</th>
+                <th>Tiempo jugado</th>
+            </tr>
+        </thead>
+        <tbody id="tablaProgreso">
+            <tr>
+                <td>Oro en el laberinto</td>
+                <td>Orientación</td>
+                <td>50%</td>
+                <td>30 min</td>
+            </tr>
+            <tr>
+                <td>Resuelve el enigma</td>
+                <td>Resolución de problemas</td>
+                <td>70%</td>
+                <td>45 min</td>
+            </tr>
+            <tr>
+                <td>Construye la torre</td>
+                <td>Capacidad espacial</td>
+                <td>30%</td>
+                <td>15 min</td>
+            </tr>
+            <tr>
+                <td>Decide tu camino</td>
+                <td>Independencia</td>
+                <td>90%</td>
+                <td>60 min</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Barras de habilidades -->
+    <h3>Habilidades</h3>
+    <div class="skill-container">
+        <div>
+            <label>Enfoque</label>
+            <div class="skill-bar">
+                <div class="progress-bar" id="enfoque"></div>
+            </div>
+            <span id="enfoque-label" class="label">0%</span>
+        </div>
+
+        <div>
+            <label>Capacidad espacial</label>
+            <div class="skill-bar">
+                <div class="progress-bar" id="capacidadEspacial"></div>
+            </div>
+            <span id="capacidadEspacial-label" class="label">0%</span>
+        </div>
+
+        <div>
+            <label>Resolución de problemas</label>
+            <div class="skill-bar">
+                <div class="progress-bar" id="resolucionProblemas"></div>
+            </div>
+            <span id="resolucionProblemas-label" class="label">0%</span>
+        </div>
+
+        <div>
+            <label>Independencia</label>
+            <div class="skill-bar">
+                <div class="progress-bar" id="independencia"></div>
+            </div>
+            <span id="independencia-label" class="label">0%</span>
+        </div>
+    </div>
+    <script src="info.js"></script>
+</body>
+</html>
