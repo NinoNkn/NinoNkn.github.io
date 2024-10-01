@@ -1,3 +1,288 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body */
+body {
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main and main container */
+main {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Back box */
+.caja__trasera {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.caja__trasera div {
+    margin: 20px;
+    color: white;
+    text-align: center;
+}
+
+.caja__trasera button {
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 300ms;
+    border-radius: 5px;
+}
+
+.caja__trasera button:hover {
+    background: #ffffff;
+    color: #46A2FD;
+}
+
+
+
+.contenedor__login-register form h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #46A2FD;
+}
+
+.contenedor__login-register form input,
+.contenedor__login-register form button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contenedor__login-register form button {
+    margin-top: 30px;
+    background: #46A2FD;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contenedor__login-register form button:hover {
+    background: #3181d6;
+}
+
+/* Terms and conditions and reCAPTCHA */
+.terminos {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.terminos input {
+    margin-right: 10px;
+    width: auto;
+}
+
+.g-recaptcha {
+    margin-top: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 15% auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+/* Forms */
+.contenedor__login-register {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario__login,
+.formulario__register {
+    width: 100%;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-70%, -70%);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.formulario__login.mostrar,
+.formulario__register.mostrar {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+/* Responsive for small screens */
+@media screen and (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    .caja__trasera {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .caja__trasera div {
+        margin: 10px 0;
+    }
+
+    /* ... (mantener los estilos generales anteriores) ... */
+
+/* Formularios */
+.contenedor__login-register {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.formulario__login,
+.formulario__register {
+    width: 100%;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-100%);
+}
+
+.formulario__login.mostrar,
+.formulario__register.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 2;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+    .caja__trasera {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .contenedor__login-register {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        padding: 0;
+    }
+
+    .formulario__login,
+    .formulario__register {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+        transform: none;
+    }
+
+    .formulario__login.mostrar,
+    .formulario__register.mostrar {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .formulario__login:not(.mostrar),
+    .formulario__register:not(.mostrar) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contenedor__login-register form {
+        padding: 20px;
+    }
+
+    .contenedor__login-register form h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .contenedor__login-register form input,
+    .contenedor__login-register form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .terminos {
+        font-size: 12px;
+    }
+
+    .g-recaptcha {
+        transform: scale(0.8);
+        transform-origin: 0 0;
+    }
+}}
+
 .dropdown {
 position: relative;
 display: inline-block;

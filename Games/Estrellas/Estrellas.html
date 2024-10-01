@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrapa la Estrella</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="caja__trasera">  
+            <button id="backButton" class="nav__links backButton">Volver al Inicio</button>
+            <h1>Atrapa la Estrella</h1>
+            <div id="score">Puntuación: <span id="score-value">0</span></div>
+            <div class="dropdown">
+                <button onclick="toggleDropdown()" class="dropdown-button">
+                    Dificultad
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div id="difficultyDropdown" class="dropdown-content">
+                    <a href="#" onclick="setDifficulty('easy')">Fácil</a>
+                    <a href="#" onclick="setDifficulty('medium')">Medio</a>
+                    <a href="#" onclick="setDifficulty('hard')">Difícil</a>
+                </div>
+            </div>
+        </div>
+        <div id="game-area">
+            <div id="star"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

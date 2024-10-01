@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-image: url(/images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.caja__trasera {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 128, 255, 0.5);
+    flex-wrap: wrap;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.caja__trasera h1 {
+    color: white;
+    font-size: 24px;
+}
+
+#score {
+    color: white;
+    font-size: 20px;
+}
+
+#game-area {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #333;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255);
+    border-radius: 10px;
+}
+
+#star {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFD700"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg>');
+    background-size: cover;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    border: none;
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    background-color: #488aec;
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    user-select: none;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+    transition: all 0.6s ease;
+}
+
+.dropdown-button:hover {
+    box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+
+.dropdown-button:focus,
+.dropdown-button:active {
+    opacity: 0.85;
+    box-shadow: none;
+}
+
+.dropdown-button svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .caja__trasera {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .caja__trasera h1,
+    #score,
+    .dropdown {
+        margin-bottom: 10px;
+    }
+}
+.backButton {
+    border: none;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff4d4d; /* Color rojo */
+    color: #ffffff;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(255, 77, 77, 0.3), 0 2px 4px -1px rgba(255, 77, 77, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 10px; /* Espacio encima del botón */
+}
+
+.backButton:hover {
+    background-color: #e60000; /* Color más oscuro al pasar el ratón */
+}
+
