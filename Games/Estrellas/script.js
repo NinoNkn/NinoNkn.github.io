@@ -1,8 +1,15 @@
 const star = document.getElementById('star');
 const scoreValue = document.getElementById('score-value');
+const timerValue = document.getElementById('timer-value');
+const timerDisplay = document.getElementById('timer');
 const gameArea = document.getElementById('game-area');
 let score = 0;
 let speed = 1000;
+let timer;
+let elapsedTime = 0;
+let gameStarted = false;
+let gameInterval;
+let scoreTarget = 20;
 
 function moveStar() {
     const maxX = gameArea.clientWidth - star.clientWidth;
@@ -15,32 +22,103 @@ function moveStar() {
 }
 
 function setDifficulty(level) {
+    stopGame();
+    score = 0;
+    scoreValue.textContent = score;
+    elapsedTime = 0;
+    timerValue.textContent = elapsedTime;
+    
     switch(level) {
         case 'easy':
             speed = 1500;
+            scoreTarget = 20;
             break;
         case 'medium':
             speed = 1000;
+            scoreTarget = 15;
             break;
         case 'hard':
             speed = 500;
+            scoreTarget = 10;
             break;
     }
-    resetGame();
+    
+    star.style.left = '0px';
+    star.style.top = '0px';
+}
+
+function stopGame() {
+    clearInterval(gameInterval);
+    clearInterval(timer);
+    gameStarted = false;
+}
+
+function startGame() {
+    if (!gameStarted) {
+        gameStarted = true;
+        startTimer();
+        gameInterval = setInterval(moveStar, speed);
+        timerDisplay.style.display = "block";
+    }
+}
+
+function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => {
+        elapsedTime++;
+        timerValue.textContent = elapsedTime;
+    }, 1000);
+}
+
+function displayVictoryMess() {
+    let message = '';
+    if (scoreTarget === 10) {
+        message = "¡Has completado el nivel difícil! Puedes cambiar de juego.";
+    } else if (scoreTarget === 15) {
+        message = "¡Has completado el nivel medio! Puedes continuar al nivel difícil.";
+    } else {
+        message = "¡Has completado el nivel fácil! Puedes continuar al nivel medio o difícil.";
+    }
+    
+    document.getElementById("moves").innerHTML = `${message}<br>Tiempo: ${elapsedTime} segundos`;
+    toggleVisablity("Message-Container");
+}
+
+function toggleVisablity(id) {
+    if (document.getElementById(id).style.visibility == "visible") {
+        document.getElementById(id).style.visibility = "hidden";
+        resetGame();
+    } else {
+        document.getElementById(id).style.visibility = "visible";
+    }
 }
 
 function resetGame() {
-    clearInterval(gameInterval);
+    stopGame();
     score = 0;
     scoreValue.textContent = score;
-    gameInterval = setInterval(moveStar, speed);
+    elapsedTime = 0;
+    timerValue.textContent = elapsedTime;
+    star.style.left = '0px';
+    star.style.top = '0px';
 }
 
 star.addEventListener('click', () => {
+    if (!gameStarted) {
+        startGame();
+    }
     score++;
     scoreValue.textContent = score;
-    moveStar();
+    checkWin();
 });
+
+function checkWin() {
+    if (score >= scoreTarget) {
+        stopGame();
+        displayVictoryMess();
+        timerDisplay.style.display = "block";
+    }
+}
 
 function toggleDropdown() {
     document.getElementById("difficultyDropdown").classList.toggle("show");
@@ -58,14 +136,5 @@ window.onclick = function(event) {
     }
 }
 
-let gameInterval = setInterval(moveStar, speed);
-
-// Espera a que el contenido de la página se cargue
-document.addEventListener('DOMContentLoaded', () => {
-    const backButton = document.getElementById('backButton');
-
-    // Agrega un evento de clic al botón
-    backButton.addEventListener('click', () => {
-        window.location.href = '../../index.html'; // Cambia la ruta según sea necesario
-    });
-});
+// Inicializar el juego en modo fácil
+setDifficulty('easy');

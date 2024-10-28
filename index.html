@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/estilos.css">
+    
 
     <meta name="theme-color" content="#2091F9">
 
@@ -44,8 +45,7 @@
                 <li class="nav__items">
                     <a href="./Login-Registro/AuthPage.html" class="nav__links">Iniciar sesion</a>
                 </li>
-                <li class="nav__items">
-                    <a href="/Games/Estrellas/Estrellas.html" class="nav__links">Dificultad</a>
+                
                 </li>
                 <li class="nav__items">
                     <a href="PantallaTro.html" class="nav__links">Trofeos</a>
@@ -65,7 +65,8 @@
         <section class="hero__container container">
             <h1 class="hero__title">Webjuegos</h1>
             <p class="hero__paragraph">Aprende con juegos especializados para tu pequeño</p>
-            <a href="https://otpvayne.github.io/JIVE/" class="cta">Comienza a Jugar</a>
+            <a href="/Games/Estrellas/Estrellas.html" class="cta">Comienza a Jugar</a>
+            
         </section>
     </header>
 
@@ -313,10 +314,18 @@
             <h3 class="footer__copyright">Derechos reservados &copy; Nino:3</h3>
         </section>
     </footer>
-
+    <div class="menu-container">  <!-- MENU DESPLEGABLE EN /slider.js -->
+        <button onclick="toggleMenu()" class="menu-toggle">Abrir Menú</button>
+        <div id="menu" class="menu">
+          <button class="menu-button">Opción 1</button>
+          <button class="menu-button">Opción 2</button>
+          <button class="menu-button">Opción 3</button>
+        </div>
+      </div>
     <script src="./js/slider.js"></script>
     <script src="./js/questions.js"></script>
     <script src="./js/menu.js"></script>
+    
 </body>
 
 </html>

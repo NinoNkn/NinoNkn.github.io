@@ -6,7 +6,7 @@
 }
 
 body {
-    background-image: url(/images/background.jpg);
+    background-image: url(/images/paisaje.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -45,7 +45,13 @@ main {
     color: white;
     font-size: 24px;
 }
-
+.caja__trasera p{
+    color: #f5bfbf;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    
+}
 #score {
     color: white;
     font-size: 20px;
@@ -139,6 +145,46 @@ main {
     display: block;
 }
 
+#Message-Container {
+    visibility: hidden;
+    color: rgb(255, 255, 255);
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.555);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#moves {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#okBtn {
+    padding: 10px 20px;
+    background-color: #488aec;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#okBtn:hover {
+    background-color: #3670c9;
+}
+
 @media screen and (max-width: 768px) {
     .caja__trasera {
         flex-direction: column;
@@ -152,24 +198,7 @@ main {
         margin-bottom: 10px;
     }
 }
-.backButton {
-    border: none;
-    padding: 0.75rem 1.5rem;
-    background-color: #ff4d4d; /* Color rojo */
-    color: #ffffff;
-    font-size: 0.75rem;
-    line-height: 1rem;
-    font-weight: 700;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(255, 77, 77, 0.3), 0 2px 4px -1px rgba(255, 77, 77, 0.2);
-    transition: all 0.3s ease;
-    margin-top: 10px; /* Espacio encima del botón */
-}
 
-.backButton:hover {
-    background-color: #e60000; /* Color más oscuro al pasar el ratón */
-}
+.Explicacion_Estrella{
 
+}
