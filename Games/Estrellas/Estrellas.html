@@ -6,43 +6,48 @@
     <title>Atrapa la Estrella</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="/js/button-panel.js" defer></script>
 </head>
 <body>
     <main>
-        <div class="caja__trasera">  
-            <button id="backButton" class="nav__links backButton">Volver al Inicio</button>
+        <div class="caja__trasera">
             <h1>Atrapa la Estrella</h1>
             <div id="score">Puntuación: <span id="score-value">0</span></div>
             <div class="dropdown">
                 <button onclick="toggleDropdown()" class="dropdown-button">
                     Dificultad
-                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                     </svg>
                 </button>
                 <div id="difficultyDropdown" class="dropdown-content">
-                    <a href="#" onclick="setDifficulty('easy')">Fácil</a>
+                    <a href="#" onclick="setDifficulty('easy')">Fácil (Predeterminado)</a>
                     <a href="#" onclick="setDifficulty('medium')">Medio</a>
                     <a href="#" onclick="setDifficulty('hard')">Difícil</a>
                 </div>
+                
             </div>
+            
+            <p class="Explicacion_Estrella">LLega lo mas pronto a este puntaje Facil: 20  Medio: 15  Dificil: 10 </p>
+            <p class="Explicacion_Estrella">¡Haz clic en la estrella brillante antes de que se mueva! Gana puntos por cada estrella que atrapes.</p>
         </div>
+        
         <div id="game-area">
             <div id="star"></div>
         </div>
+        <br /><br />
     </main>
+    
+    <!-- Message Container instead of Modal -->
+    <div id="Message-Container">
+        <p id="moves"></p>
+        <input id="okBtn" type="button" onclick="toggleVisablity('Message-Container')" value="Vale!" />
+    </div>
+    
+    <div id="timer" style="display: none;">
+        <span>Tiempo: </span><span id="timer-value">0</span> segundos
+    </div>
+    
     <script src="script.js"></script>
-    <script>
-		const tiempoLimiteMinutos = 120; // Cambia este valor para ajustar los minutos
-		// Convertir minutos a milisegundos
-		const tiempoLimiteMilisegundos = tiempoLimiteMinutos * 60 * 1000;
-		// Función para redirigir a la página de inicio
-		function redirigirInicio() {
-			window.location.href = "index.html"; // Cambia "index.html" a la ruta de tu página de inicio
-		}
-
-		// Configura el temporizador para redirigir después del tiempo límite
-		setTimeout(redirigirInicio, tiempoLimite);
-	</script>
 </body>
 </html>

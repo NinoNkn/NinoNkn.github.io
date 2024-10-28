@@ -1,0 +1,62 @@
+<style>
+                /* General */
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                /* Panel Container */
+                .panel-container {
+                    display: flex;
+                    justify-content: flex-start;  /* Alineación a la izquierda */
+                    align-items: flex-start;  /* Alineación a la parte superior */
+                    padding: 20px;  /* Espacio interno */
+                    margin: 0; /* Elimina el margen para asegurar que esté a la izquierda */
+                }
+
+                .button-panel {
+                    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+                    padding: 30px;  /* Padding interno aumentado */
+                    border-radius: 12px;  /* Bordes más redondeados */
+                    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);  /* Sombra más pronunciada */
+                    width: 300px;  /* Ancho del panel */
+                }
+
+                /* Botones */
+                .panel-button {
+                    width: 100%;
+                    padding: 12px 20px;  /* Botones más altos */
+                    margin-bottom: 16px;  /* Más espacio entre botones */
+                    background-color: #488aec; /* Color de fondo del botón */
+                    border: none;
+                    border-radius: 5px; /* Bordes redondeados */
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    color: white; /* Color del texto */
+                    font-size: 16px;  /* Texto más grande */
+                }
+
+                .panel-button:last-child {
+                    margin-bottom: 0;  /* Elimina el margen del último botón */
+                }
+
+                .panel-button:hover {
+                    background-color: #3181d6; /* Color de fondo al pasar el mouse */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Sombra en hover */
+                }
+
+                /* Opcional: Agregar efecto al hacer clic */
+                .panel-button:active {
+                    transform: scale(0.95); /* Efecto de clic */
+                }
+            </style>
+            <div class="panel-container">
+                <div class="button-panel">
+                    <button class="panel-button">Botón 1</button>
+                    <button class="panel-button">Botón 2</button>
+                    <button class="panel-button">Botón 3</button>
+                    <button class="panel-button">Botón 4</button>
+                </div>
+            </div>
