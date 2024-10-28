@@ -190,12 +190,11 @@ main {
         flex-direction: column;
         height: auto;
         padding: 20px;
-    }
+    }}
 
     .caja__trasera h1,
     #score,
     .dropdown {
         margin-bottom: 10px;
     }
-}
 
