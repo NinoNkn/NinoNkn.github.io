@@ -124,3 +124,4 @@ app.use((err, req, res, next) => {
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:3000`);
 });
+//COMANDO PARA CORRER ES node Login-Registro/server.js
