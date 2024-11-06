@@ -138,7 +138,7 @@ class ButtonPanel extends HTMLElement {
         <a href="../../index.html" class="panel-button">Página principal</a>
         <a href="/Games/LaberintoGame/PantallaLaberintos.html" class="panel-button">Juego Laberinto</a>
         <a href="/Games/Game_2/memoria.html" class="panel-button">Juego Memoria</a>
-        <a href="/Games/LaberintoGame/GaleriadeTrofeos.HTML" class="panel-button">Trofeos</a>
+        <a href="/Games/LaberintoGame/GaleriadeTrofeos.html" class="panel-button">Trofeos</a>
 
     </div>
 
