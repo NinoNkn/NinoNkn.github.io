@@ -6,7 +6,7 @@
     <title>Atrapa la Estrella</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="\js\button-panel.js" defer></script>
+    <script src="button-panel.js" defer></script>
 </head>
 <body>
     <main>
@@ -50,5 +50,18 @@
     
     <script src="script.js"></script>
     <button-panel></button-panel>
+    <script>
+		const tiempoLimiteMinutos = 120; // Cambia este valor para ajustar los minutos
+		// Convertir minutos a milisegundos
+		const tiempoLimiteMilisegundos = tiempoLimiteMinutos * 60 * 1000;
+	
+		// Función para redirigir a la página de inicio
+		function redirigirInicio() {
+			window.location.href = "/NinoNkn.github.io/index.html"; 
+		}
+	
+		// Configuracion el temporizador para redirigir después del tiempo límite
+		setTimeout(redirigirInicio, tiempoLimiteMilisegundos);
+	</script>
 </body>
 </html>
