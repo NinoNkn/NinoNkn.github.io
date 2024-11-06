@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "express": "^4.21.0",
     "express-rate-limit": "^7.4.0",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "ninonkn.github.io": "file:"
   }
 }

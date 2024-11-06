@@ -36,13 +36,14 @@
 		const tiempoLimiteMinutos = 120; // Cambia este valor para ajustar los minutos
 		// Convertir minutos a milisegundos
 		const tiempoLimiteMilisegundos = tiempoLimiteMinutos * 60 * 1000;
+	
 		// Función para redirigir a la página de inicio
 		function redirigirInicio() {
-			window.location.href = "index.html"; // Cambia "index.html" a la ruta de tu página de inicio
+			window.location.href = "/NinoNkn.github.io/index.html"; 
 		}
-
-		// Configura el temporizador para redirigir después del tiempo límite
-		setTimeout(redirigirInicio, tiempoLimite);
+	
+		// Configuracion el temporizador para redirigir después del tiempo límite
+		setTimeout(redirigirInicio, tiempoLimiteMilisegundos);
 	</script>
 </body>
 </html>
