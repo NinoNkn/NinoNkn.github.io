@@ -51,16 +51,24 @@
     <script src="script.js"></script>
     <button-panel></button-panel>
     <script>
-		const tiempoLimiteMinutos = 120; // Cambia este valor para ajustar los minutos
-		// Convertir minutos a milisegundos
+		const tiempoLimiteMinutos = 1; // Cambia este valor para ajustar los minutos
 		const tiempoLimiteMilisegundos = tiempoLimiteMinutos * 60 * 1000;
+		const tiempoNotificacionMilisegundos = tiempoLimiteMilisegundos - 5000; // 5 segundos antes
+	
+		// Función para mostrar una notificación
+		function mostrarNotificacion() {
+			alert("El tiempo se agotará en 5 segundos. Se redirigirá al inicio.");
+		}
 	
 		// Función para redirigir a la página de inicio
 		function redirigirInicio() {
 			window.location.href = "pantallazo.html"; 
 		}
 	
-		// Configuracion el temporizador para redirigir después del tiempo límite
+		// Configuración del temporizador para mostrar la notificación
+		setTimeout(mostrarNotificacion, tiempoNotificacionMilisegundos);
+	
+		// Configuración del temporizador para redirigir después del tiempo límite
 		setTimeout(redirigirInicio, tiempoLimiteMilisegundos);
 	</script>
 </body>
