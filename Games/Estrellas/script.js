@@ -58,7 +58,7 @@ function startGame() {
         gameStarted = true;
         startTimer();
         gameInterval = setInterval(moveStar, speed);
-        timerDisplay.style.display = "block";
+        timerDisplay.style.display = "none";
     }
 }
 
@@ -116,7 +116,7 @@ function checkWin() {
     if (score >= scoreTarget) {
         stopGame();
         displayVictoryMess();
-        timerDisplay.style.display = "block";
+        timerDisplay.style.display = "none";
     }
 }
 
