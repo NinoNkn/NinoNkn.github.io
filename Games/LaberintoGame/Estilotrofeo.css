@@ -1,0 +1,33 @@
+html, body {
+background-image: url(F.jpg);
+overflow: auto;
+background-size: cover;
+font-family: 'Poppins', sans-serif;
+}
+
+
+.trophy-gallery {
+display: flex;
+gap: 100px;
+justify-content: center;
+}
+
+.trophy {
+color: aliceblue;
+text-align: center;
+opacity: 0.5;
+max-width: 150px;
+}
+
+.trophy.unlocked {
+opacity: 1;
+}
+
+.trophy img {
+    width: 100%;
+    max-width: 150px; /* Tamaño máximo */
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
