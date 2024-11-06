@@ -136,8 +136,8 @@ class ButtonPanel extends HTMLElement {
         <div class="menu-title">Menú Rápido</div>
         <!-- Opción 1: Usando enlaces <a> directamente -->
         <a href="../../index.html" class="panel-button">Página principal</a>
-        <a href="/Games/Laberinto/Laberinto.html" class="panel-button">Juego Laberinto</a>
-        <a href="/Games/Game_2/memoria.html" class="panel-button">Juego Memoria</a>
+        <a href="Games/Laberinto/Laberinto.html" class="panel-button">Juego Laberinto</a>
+        <a href="Games/Game_2/memoria.html" class="panel-button">Juego Memoria</a>
         <a href="trofeos.html" class="panel-button">Trofeos</a>
 
     </div>
