@@ -12,6 +12,51 @@
 	<script src="button-panel.js" defer></script>
 </head>
 <body>
+	<!-- Icono verde parpadeante y mensaje -->
+<div class="icono-activo">
+    <div class="mensaje">Tu sesión está activa</div>
+</div>
+
+<!-- Estilos CSS -->
+<style>
+    /* Estilos para el icono más pequeño */
+    .icono-activo {
+        width: 30px;
+        height: 30px;
+        background-color: green;
+        border-radius: 50%;
+        animation: parpadeo 1s infinite;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+    }
+
+    /* Animación de parpadeo */
+    @keyframes parpadeo {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    /* Estilos para el mensaje */
+    .mensaje {
+        display: none;
+        position: absolute;
+        top: 40px; /* Ajustado para que esté un poco más abajo */
+        left: -10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+    }
+
+    /* Mostrar mensaje cuando el mouse está encima del icono */
+    .icono-activo:hover .mensaje {
+        display: block;
+    }
+</style>
+
 	<div class="container">
 		<h1>Conecta Parejas</h1>
 		<div class = "dashboard">

@@ -31,3 +31,11 @@ opacity: 1;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+/* Centrar el título */
+h1 {
+    text-align: center;
+    color: aliceblue; /* Color opcional, ajusta al estilo de tu página */
+    font-size: 2rem; /* Ajusta el tamaño del título */
+    margin-top: 20px; /* Espacio superior si lo necesitas */
+  }
+  
