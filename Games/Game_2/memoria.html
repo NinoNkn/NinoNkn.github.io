@@ -73,5 +73,19 @@
 		// Configuración del temporizador para redirigir después del tiempo límite
 		setTimeout(redirigirInicio, tiempoLimiteMilisegundos);
 	</script>
+	
+	<script>
+	(function () {
+	const startTime = Date.now();
+	const habilidadIndex = 3; // Página 1 -> Habilidad 1
+	function saveProgress() {
+			const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+			const currentProgress = JSON.parse(localStorage.getItem("progress")) || [0, 0, 0, 0, 0];
+			currentProgress[habilidadIndex] = Math.min(currentProgress[habilidadIndex] + elapsedTime, 100);
+			localStorage.setItem("progress", JSON.stringify(currentProgress));
+	}
+	window.addEventListener("beforeunload", saveProgress);
+	})();
+	</script>
 </body>
 </html>

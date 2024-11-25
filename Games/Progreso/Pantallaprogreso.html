@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráfico de Radar</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <button-panel></button-panel>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a2e;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      margin: 0;
+      overflow-y:auto; 
+    }
+    #radarChart {
+    display: block;
+    margin: 0 auto; /* Centra el rombo */
+    max-width: 100%; /* Limita el tamaño máximo */
+    height: auto; /* Mantiene la proporción */
+    }
+    .legend {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .legend span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .legend span div {
+      width: 20px;
+      height: 20px;
+    }
+    .progress {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 20px;
+    margin-top: 5px;
+    }
+    .progress-bar {
+    height: 100%;
+    background-color: #4caf50; /* Color verde */
+    transition: width 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="radarChart" width="400" height="400"></canvas>
+  <div class="legend">
+    <span><div style="background-color: #ff6384;"></div> El jugador y su aprendizaje</span>
+  </div>
+  
+  <div id="progress-bars" style="margin-top: 20px;">
+    <div>
+      <label>pensamiento lógico: <span id="progress-text-0">0%</span></label>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar-0" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div>
+      <label>viso-espaciales: <span id="progress-text-1">0%</span></label>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar-1" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div>
+      <label>coordinación psicomotriz: <span id="progress-text-2">0%</span></label>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar-2" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div>
+      <label>Retencion de información: <span id="progress-text-3">0%</span></label>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar-3" style="width: 0%;"></div>
+      </div>
+    </div>
+    <div>
+      <label>Agilidad mental: <span id="progress-text-4">0%</span></label>
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar-4" style="width: 0%;"></div>
+        
+      </div>
+    </div>
+  
+
+  </div>
+  
+  <script src="Funcionprogreso.js"></script>
+  <script src="button-panelprog.js" defer></script>
+</body>
+</html>

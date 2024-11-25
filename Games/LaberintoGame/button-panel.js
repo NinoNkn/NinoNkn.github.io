@@ -140,6 +140,7 @@ class ButtonPanel extends HTMLElement {
         <a href="/Games/Game_2/memoria.html" class="panel-button">Juego Memoria</a>
         <a href="/Games/LaberintoGame/GaleriadeTrofeos.html" class="panel-button">Trofeos</a>
         <a href="https://ninonkno1830.atlassian.net/servicedesk/customer/portal/2" class="panel-button">Soporte Tecnico</a>
+        <a href="/Games/Progreso/Pantallaprogreso.html" class="panel-button">Progreso</a>
 
     </div>
 

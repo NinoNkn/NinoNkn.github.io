@@ -72,8 +72,33 @@
       setTimeout(mostrarNotificacion, tiempoNotificacionMilisegundos);
     
       // Configuración del temporizador para redirigir después del tiempo límite
-      setTimeout(redirigirInicio, tiempoLimiteMilisegundos);
-    </script>
+      setTimeout(redirigirInicio, tiempoLimiteMilisegundos)
+      </script>
+
+<script>
+	(function () {
+	const startTime = Date.now();
+	const habilidadIndex = 1; // Página 1 -> Habilidad 1
+	function saveProgress() {
+			const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+			const currentProgress = JSON.parse(localStorage.getItem("progress")) || [0, 0, 0, 0, 0];
+			currentProgress[habilidadIndex] = Math.min(currentProgress[habilidadIndex] + elapsedTime, 100);
+			localStorage.setItem("progress", JSON.stringify(currentProgress));
+	}
+	window.addEventListener("beforeunload", saveProgress);
+	})();
+  (function () {
+	const startTime = Date.now();
+	const habilidadIndex = 2; // Página 1 -> Habilidad 1
+	function saveProgress() {
+			const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+			const currentProgress = JSON.parse(localStorage.getItem("progress")) || [0, 0, 0, 0, 0];
+			currentProgress[habilidadIndex] = Math.min(currentProgress[habilidadIndex] + elapsedTime, 100);
+			localStorage.setItem("progress", JSON.stringify(currentProgress));
+	}
+	window.addEventListener("beforeunload", saveProgress);
+	})();
+	</script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
   <script src="./Laberinto.js"></script>
